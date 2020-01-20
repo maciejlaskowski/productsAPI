@@ -20,150 +20,6 @@ There are two ways to run the programme.
 
 The programme gives the following options:
 
-**a) Change Offers microservice URL:**
-
-PUT /api/v1.0/configure_offers
-
-Headers: none
-
-Request: none
-
-{
-
-“address”: <new URL>
-  
-}
-
-Response:
-
-200 OK
-
-400 BAD REQUEST
-
-{
-
-  "error": "Wrong request"
-  
-}
-
-**b) Get all products**
-
-GET /products/api/v1.0/products/get_all_products
-
-Headers: none
-
-Request: none
-
-Response:
-
-200 OK
-
-[
-
-  {
-  
-    "description": "<product description>",
-    
-    "id":<product id>,
-    
-    "name": "<product name>"
-    
-  },...
-  
-]
-
-404 NOT FOUND
-
-{
-
-  "error": "Not found"
-  
-}
-
-**c) Get one product**
-
-GET /products/api/v1.0/products/get_product/
-
-Headers: none
-
-Request:
-
-{
-
-"id": <product id>
-  
-}
-
-Response:
-
-200 OK
-
-[
-
-  {
-  
-    "description": "<product description>",
-    
-    "id":<product id>,
-    
-    "name": "<product name>"
-    
-  }
-  
-]
-
-400 BAD REQUEST
-
-{
-
-  "error": "Wrong request"
-  
-}
-
-404 NOT FOUND
-
-{
-
-  "error": "Not found"
-  
-}
-
-**d) Get all offers**
-
-GET /products/api/v1.0/products/get_all_offers
-
-Headers: none
-
-Request: none
-
-Response:
-
-200 OK
-
-[
-
-  {
-  
-    "id": <offer id>,
-    
-    "items_in_stock": <stock>,
-    
-    "price": <price>,
-    
-    "product_id": <product id>
-    
-  },...
-  
-]
-
-404 NOT FOUND
-
-{
-
-  "error": "Not found"
-  
-}
-
 **e) Add product**
 
 POST /products/api/v1.0/products/add_product
@@ -267,5 +123,198 @@ Product deleted
 {
 
   "error": "Not found"
+  
+}
+
+**c) Get one product**
+
+GET /products/api/v1.0/products/get_product/
+
+Headers: none
+
+Request:
+
+{
+
+"id": <product id>
+  
+}
+
+Response:
+
+200 OK
+
+[
+
+  {
+  
+    "description": "<product description>",
+    
+    "id":<product id>,
+    
+    "name": "<product name>"
+    
+  }
+  
+]
+
+400 BAD REQUEST
+
+{
+
+  "error": "Wrong request"
+  
+}
+
+404 NOT FOUND
+
+{
+
+  "error": "Not found"
+  
+}
+
+**b) Get all products**
+
+GET /products/api/v1.0/products/get_all_products
+
+Headers: none
+
+Request: none
+
+Response:
+
+200 OK
+
+[
+
+  {
+  
+    "description": "<product description>",
+    
+    "id":<product id>,
+    
+    "name": "<product name>"
+    
+  },...
+  
+]
+
+404 NOT FOUND
+
+{
+
+  "error": "Not found"
+  
+}
+
+**c) Get offers for one product**
+
+GET /products/api/v1.0/products/get_offers_one_product/
+
+Headers: none
+
+Request:
+
+{
+
+"id": <product id>
+  
+}
+
+Response:
+
+200 OK
+
+[
+
+  {
+  
+    "id": <offer id>,
+    
+    "items_in_stock": <stock>,
+    
+    "price": <price>,
+    
+    "product_id": <product id>
+    
+  }
+  
+]
+
+400 BAD REQUEST
+
+{
+
+  "error": "Wrong request"
+  
+}
+
+404 NOT FOUND
+
+{
+
+  "error": "Not found"
+  
+}
+**d) Get all offers**
+
+GET /products/api/v1.0/products/get_all_offers
+
+Headers: none
+
+Request: none
+
+Response:
+
+200 OK
+
+[
+
+  {
+  
+    "id": <offer id>,
+    
+    "items_in_stock": <stock>,
+    
+    "price": <price>,
+    
+    "product_id": <product id>
+    
+  },...
+  
+]
+
+404 NOT FOUND
+
+{
+
+  "error": "Not found"
+  
+}
+
+**a) Change Offers microservice URL:**
+
+PUT /api/v1.0/configure_offers
+
+Headers: none
+
+Request: 
+
+{
+
+“address”: <new URL>
+  
+}
+
+Response:
+
+200 OK
+
+400 BAD REQUEST
+
+{
+
+  "error": "Wrong request"
   
 }
