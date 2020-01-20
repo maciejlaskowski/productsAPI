@@ -1,6 +1,6 @@
 # Product aggregator microservice
-### Python 3 backend developer exercise
-### Create REST API JSON Python microservice
+Python 3 backend developer exercise
+Create REST API JSON Python microservice
 
 
 ## Instructions
