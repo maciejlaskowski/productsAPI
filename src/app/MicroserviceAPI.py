@@ -154,4 +154,4 @@ job = scheduler.add_job(update_offers, 'interval', minutes=1)
 scheduler.start()
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
