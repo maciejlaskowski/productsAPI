@@ -20,7 +20,7 @@ There are two ways to run the programme.
 
 The programme gives the following options:
 
-**e) Add product**
+**a) Add product**
 
 POST /products/api/v1.0/products/add_product
 
@@ -50,7 +50,7 @@ Product added
   
 }
   
-**f) Update product**
+**b) Update product**
 
 PUT /products/api/v1.0/products/update_product
 
@@ -90,7 +90,7 @@ Product updated
   
 } 
 
-**f) Delete product**
+**c) Delete product**
 
 DELETE /products/api/v1.0/products/delete_product
 
@@ -126,7 +126,7 @@ Product deleted
   
 }
 
-**c) Get one product**
+**d) Get one product**
 
 GET /products/api/v1.0/products/get_product/
 
@@ -174,7 +174,7 @@ Response:
   
 }
 
-**b) Get all products**
+**e) Get all products**
 
 GET /products/api/v1.0/products/get_all_products
 
@@ -208,7 +208,7 @@ Response:
   
 }
 
-**c) Get offers for one product**
+**f) Get offers for one product**
 
 GET /products/api/v1.0/products/get_offers_one_product/
 
@@ -257,7 +257,7 @@ Response:
   "error": "Not found"
   
 }
-**d) Get all offers**
+**g) Get all offers**
 
 GET /products/api/v1.0/products/get_all_offers
 
@@ -293,7 +293,7 @@ Response:
   
 }
 
-**a) Change Offers microservice URL:**
+**h) Change Offers microservice URL:**
 
 PUT /api/v1.0/configure_offers
 
