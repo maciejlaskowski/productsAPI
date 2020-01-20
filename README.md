@@ -136,8 +136,8 @@ Request:
 
 {
 
-"id": <product id>
-  
+        "id" : <product id>
+        
 }
 
 Response:
