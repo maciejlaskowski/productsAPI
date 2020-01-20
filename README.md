@@ -6,14 +6,19 @@ Create REST API JSON Python microservice.
 
 ## Instructions
 ### **How to run the programme**
-There are two ways to run the programme.
+There are three ways to run the programme.
 1. Create a **virtual environement** with the files provided.
 
-  Once ready you can start it from the "src" folder with: _python -m app.MicroserviceAPI_
+    Once ready you can start it from the "src" folder with: _python -m app.MicroserviceAPI_
   
-  To run the **tests** from the same folder execute: _python -m pytest -s_
+    To run the **tests** from the same folder execute: _python -m pytest -s_
  
-2. Use the provided **Docker-compose** file.
+2. Use the provided **Docker** and **Docker-compose** files.
+
+3. Or use the **Heroku** url:
+
+    https://products-api-heruko.herokuapp.com/
+
 
 ### **How to use the programme**
 
