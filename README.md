@@ -35,9 +35,9 @@ Request:
 
 {
 
-        "name": <product name>,
+        "name": "<product name>",
         
-        "description": <product description>
+        "description": "<product description>"
         
 }
 
@@ -67,9 +67,9 @@ Request:
 
         "id" : <product id>,
         
-        "name": <product name>),
+        "name": "<product name>",
         
-        "description": <product description>)
+        "description": "<product description>")
         
 }
 
