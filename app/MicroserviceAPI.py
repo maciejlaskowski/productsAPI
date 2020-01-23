@@ -28,7 +28,7 @@ def wrong_request(error):
 @app.route('/')
 @app.route('/index')
 def index():
-    return "Products microservice"
+    return "Products Microservice"
 
 # Change Offers MS URL
 @app.route('/api/v1.0/configure_offers', methods=['PUT'])
