@@ -24,6 +24,12 @@ def not_found(error):
 def wrong_request(error):
     return make_response(jsonify({'error': 'Wrong request'}), 400)
 
+# Index website
+@app.route('/')
+@app.route('/index')
+def index():
+    return "Products microservice"
+
 # Change Offers MS URL
 @app.route('/api/v1.0/configure_offers', methods=['PUT'])
 def configure_offers():
