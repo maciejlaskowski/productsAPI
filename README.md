@@ -9,7 +9,7 @@ Create REST API JSON Python microservice.
 There are three ways to run the programme.
 1. Create a **virtual environement** with the files provided.
 
-    Once ready you can start it from the "src" folder with: _python -m app.MicroserviceAPI_
+    Once ready you can start it with: _python -m app.MicroserviceAPI_
   
     To run the **tests** from the same folder execute: _python -m pytest -s_
  
