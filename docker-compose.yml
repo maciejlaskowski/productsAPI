@@ -8,7 +8,7 @@ services:
     # custom container name (rather than the generated default)
     container_name: microservice
     restart: unless-stopped
-    build: src
+    build: .
     environment:
       FLASK_ENV: "development"
     ports:
