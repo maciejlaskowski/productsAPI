@@ -6,13 +6,14 @@ class OffersMicroservice:
     def __init__(self): 
     # Offers microservice address
         self.__offersAddress = "https://applifting-python-excercise-ms.herokuapp.com/api/v1/"
+    # Get Token and set up header
         self.__head = self.__getAccessTokenHeader()
     
     # Change offers URL
     def changeURL(self, url):
         self.__offersAddress = str(url)
         
-    # Get access Token and set up authentication header
+    # Get access Token
     def __getAccessTokenHeader(self):
         reqToken = requests.post(self.__offersAddress + 'auth/')
         authRequest = json.loads(reqToken.text)

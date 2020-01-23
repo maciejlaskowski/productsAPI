@@ -7,7 +7,7 @@ from apscheduler.schedulers.background import BackgroundScheduler
 from AsqlDB import MicroserviceDB
 from AofferMicroserviceConnection import OffersMicroservice
 
-
+# Create Flask instance
 app = Flask(__name__)
 
 # Create DB instance
@@ -36,7 +36,7 @@ def configure_offers():
     }
     # Call offers instance to change URL
     offers.changeURL(get["address"])
-    return ''
+    return "URL changed"
 
 # Get all products
 @app.route('/products/api/v1.0/products/get_all_products', methods=['GET'])
@@ -109,7 +109,7 @@ def add_product():
     offers.registerProduct(product)
     # Update offers for products
     update_offers()
-
+    
     return "Product added"
 
 # Update product
@@ -134,7 +134,8 @@ def update_prod():
     db.updateProduct(id = int(update["id"]), name = update["name"], description = update["description"])
     # Re-register product in the Offers service
     offers.registerProduct({"id": int(update["id"]), "name":update["name"], "description":update["description"]})
-    return 'Product updated'
+    
+    return "Product updated"
 
 # Delete product
 @app.route('/products/api/v1.0/products/delete_product/', methods = ['DELETE'])
@@ -151,7 +152,7 @@ def delete_prod():
     # Call DB to delete product
     db.deleteProduct(str(delete["id"]))
     
-    return ("Product deleted")
+    return "Product deleted"
 
 # Update Offers
 def update_offers():
@@ -179,5 +180,6 @@ scheduler = BackgroundScheduler()
 job = scheduler.add_job(update_offers, 'interval', minutes=1)
 scheduler.start()
 
+# Execute Flask
 if __name__ == '__main__':
     app.run(debug=False)
