@@ -22,6 +22,8 @@ There are three ways to run the programme.
 
 ### **How to use the programme**
 
+Authentication:
+Use Bearer Token: SuperAwesomeApi
 
 The programme gives the following options:
 

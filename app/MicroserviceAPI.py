@@ -3,12 +3,25 @@
 from flask import Flask, request, make_response, jsonify, abort
 import json
 from apscheduler.schedulers.background import BackgroundScheduler
+from flask_httpauth import HTTPTokenAuth
 
 from AsqlDB import MicroserviceDB
 from AofferMicroserviceConnection import OffersMicroservice
 
 # Create Flask instance
 app = Flask(__name__)
+
+# Authentication
+    # Create authentication instance
+auth = HTTPTokenAuth('Bearer')
+    # Define token
+authenticationToken = "SuperAwesomeApi"
+    # Token verification
+@auth.verify_token
+def verify_token(token):
+    if token == authenticationToken:
+        return True
+    return False
 
 # Create DB instance
 db = MicroserviceDB()
@@ -32,6 +45,7 @@ def index():
 
 # Change Offers MS URL
 @app.route('/api/v1.0/configure_offers', methods=['PUT'])
+@auth.login_required
 def configure_offers():
     # Handle errors
     if not request.json or not "address" in request.json:
@@ -46,6 +60,7 @@ def configure_offers():
 
 # Get all products
 @app.route('/products/api/v1.0/products/get_all_products', methods=['GET'])
+@auth.login_required
 def get_products():
     # Handle errors
     if db.getProducts() == []:
@@ -54,6 +69,7 @@ def get_products():
     
 # Get one product
 @app.route('/products/api/v1.0/products/get_product/', methods=['GET'])
+@auth.login_required
 def get_product():
     # Handle errors
     if not request.json or not "id" in request.json:
@@ -69,6 +85,7 @@ def get_product():
 
 # Get all offers
 @app.route('/products/api/v1.0/products/get_all_offers', methods=['GET'])
+@auth.login_required
 def get_all_offers():
     # Handle errors
     if db.getOffers() == []:
@@ -78,6 +95,7 @@ def get_all_offers():
     
 # Get offers for one product
 @app.route('/products/api/v1.0/products/get_offers_one_product/', methods=['GET'])
+@auth.login_required
 def get_offers_one_product():
     # Handle errors
     if not request.json or not "id" in request.json:
@@ -94,6 +112,7 @@ def get_offers_one_product():
 
 # Add product
 @app.route('/products/api/v1.0/products/add_product', methods=['POST'])
+@auth.login_required
 def add_product():
     # Handle errors
     if not request.json or not "name" in request.json or request.json["name"] == '':
@@ -116,10 +135,14 @@ def add_product():
     # Update offers for products
     update_offers()
     
-    return "Product added"
+    return jsonify({
+        "message":"Product added",
+        "id":id
+    })
 
 # Update product
 @app.route('/products/api/v1.0/products/update_product', methods=['PUT'])
+@auth.login_required
 def update_prod():
     # Handle errors
     if not request.json or not "id" in request.json or request.json["id"] == '':
@@ -145,6 +168,7 @@ def update_prod():
 
 # Delete product
 @app.route('/products/api/v1.0/products/delete_product/', methods = ['DELETE'])
+@auth.login_required
 def delete_prod():
     # Handle errors
     if not request.json or not "id" in request.json or request.json["id"] == '':
