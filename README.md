@@ -23,7 +23,7 @@ There are three ways to run the programme.
 ### **How to use the programme**
 
 Authentication:
-Use Bearer Token: SuperAwesomeApi
+Use Bearer token: SuperAwesomeApi
 
 The programme gives the following options:
 
@@ -31,7 +31,7 @@ The programme gives the following options:
 
 POST /products/api/v1.0/products/add_product
 
-Headers: none
+Headers: Authorization: Bearer SuperAwesomeApi
 
 Request: 
 
@@ -56,12 +56,16 @@ Product added
   "error": "Wrong request"
   
 }
-  
+
+401 UNAUTHORIZED
+
+Unauthorized Access
+
 **b) Update product**
 
 PUT /products/api/v1.0/products/update_product
 
-Headers: none
+Headers: Authorization: Bearer SuperAwesomeApi
 
 Request: 
 
@@ -97,11 +101,15 @@ Product updated
   
 } 
 
+401 UNAUTHORIZED
+
+Unauthorized Access
+
 **c) Delete product**
 
 DELETE /products/api/v1.0/products/delete_product
 
-Headers: none
+Headers: Authorization: Bearer SuperAwesomeApi
 
 Request: 
 
@@ -133,11 +141,15 @@ Product deleted
   
 }
 
+401 UNAUTHORIZED
+
+Unauthorized Access
+
 **d) Get one product**
 
 GET /products/api/v1.0/products/get_product/
 
-Headers: none
+Headers: Authorization: Bearer SuperAwesomeApi
 
 Request:
 
@@ -181,11 +193,15 @@ Response:
   
 }
 
+401 UNAUTHORIZED
+
+Unauthorized Access
+
 **e) Get all products**
 
 GET /products/api/v1.0/products/get_all_products
 
-Headers: none
+Headers: Authorization: Bearer SuperAwesomeApi
 
 Request: none
 
@@ -215,11 +231,15 @@ Response:
   
 }
 
+401 UNAUTHORIZED
+
+Unauthorized Access
+
 **f) Get offers for one product**
 
 GET /products/api/v1.0/products/get_offers_one_product/
 
-Headers: none
+Headers: Authorization: Bearer SuperAwesomeApi
 
 Request:
 
@@ -264,11 +284,16 @@ Response:
   "error": "Not found"
   
 }
+
+401 UNAUTHORIZED
+
+Unauthorized Access
+
 **g) Get all offers**
 
 GET /products/api/v1.0/products/get_all_offers
 
-Headers: none
+Headers: Authorization: Bearer SuperAwesomeApi
 
 Request: none
 
@@ -300,11 +325,15 @@ Response:
   
 }
 
+401 UNAUTHORIZED
+
+Unauthorized Access
+
 **h) Change Offers microservice URL:**
 
 PUT /api/v1.0/configure_offers
 
-Headers: none
+Headers: Authorization: Bearer SuperAwesomeApi
 
 Request: 
 
@@ -325,3 +354,7 @@ Response:
   "error": "Wrong request"
   
 }
+
+401 UNAUTHORIZED
+
+Unauthorized Access
