@@ -22,9 +22,10 @@ There are three ways to run the programme.
 
 ### **How to use the programme**
 
-Authentication:
+**Authentication:**
 
 Use Bearer token: SuperAwesomeApi
+
 
 The programme gives the following options:
 
