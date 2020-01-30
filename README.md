@@ -2,6 +2,7 @@
 Python 3 backend developer exercise.
 
 Create REST API JSON Python microservice.
+Task's details in: **Task.pdf**
 
 
 ## Instructions
